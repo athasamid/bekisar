@@ -1,0 +1,284 @@
+.vdatetime {
+  // Vue Transition
+  &-fade {
+    &-enter-active,
+    &-leave-active {
+      transition: opacity .3s;
+    }
+    &-enter,
+    &-leave-to {
+      opacity: 0;
+    }
+  }
+
+  // Global overlay
+  &-overlay {
+    z-index: 99899;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    transition: opacity .3s;
+  }
+
+  // Calendar
+  &-calendar {
+    // Calendar navigation
+    &__navigation {
+      &,
+      & * {
+        box-sizing: border-box;
+      }
+      & {
+        position: relative;
+        margin: 15px 0;
+        padding: 0 30px;
+        width: 100%;
+      }
+      &--previous,
+      &--next {
+        position: absolute;
+        top: 0;
+        padding: 0 5px;
+        width: 18px;
+        cursor: pointer;
+        & svg {
+          width: 8px;
+          & path {
+            transition: stroke .3s;
+          }
+        }
+        &:hover svg path {
+          stroke: #888;
+        }
+      }
+      &--previous {
+        left: 25px;
+      }
+      &--next {
+        right: 25px;
+        transform: scaleX(-1);
+      }
+    }
+
+    &__current--month {
+      text-align: center;
+      text-transform: capitalize;
+    }
+
+    // Month
+    &__month {
+      padding: 0 20px;
+      transition: height .2s;
+
+      &__weekday,
+      &__day {
+        display: inline-block;
+        width: calc(100% / 7);
+        line-height: 36px;
+        text-align: center;
+        font-size: 15px;
+        font-weight: 300;
+        cursor: pointer;
+        & > span {
+          display: block;
+          width: 100%;
+          position: relative;
+          height: 0;
+          padding: 0 0 100%;
+          overflow: hidden;
+          & > span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border: 0;
+            border-radius: 50%;
+            transition: background-color .3s, color .3s;
+          }
+        }
+      }
+      &__weekday {
+        font-weight: bold;
+      }
+      &__day:hover > span > span {
+        background: #eee;
+      }
+      &__day--selected {
+        & > span > span,
+        &:hover > span > span {
+          color: #fff;
+          background: #3f51b5;
+        }
+      }
+      &__day--disabled {
+        opacity: 0.4;
+        cursor: default;
+        &:hover > span > span {
+          color: inherit;
+          background: transparent;
+        }
+      }
+    }
+  }
+
+  // Popup
+  &-popup {
+    box-sizing: border-box;
+    z-index: 99900;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 340px;
+    max-width: calc(100% - 30px);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+    color: #444;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    background: #fff;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    & * {
+      box-sizing: border-box;
+    }
+
+    &__header {
+      padding: 15px 30px;
+      background: #3f51b5;
+      color: #fff;
+      font-size: 32px;
+    }
+    &__year {
+      display: block;
+      font-weight: 300;
+      font-size: 14px;
+      opacity: 0.7;
+      cursor: pointer;
+      transition: opacity .3s;
+      &:hover {
+        opacity: 1;
+      }
+    }
+    &__actions {
+      padding: 0 20px 10px 30px;
+      text-align: right;
+    }
+    &__actions__button {
+      display: inline-block;
+      border: none;
+      padding: 10px 20px;
+      background: transparent;
+      font-size: 16px;
+      color: #3f51b5;
+      cursor: pointer;
+      transition: color .3s;
+      &:hover {
+        color: #444;
+      }
+    }
+  }
+
+  // Time picker
+  &-time-picker {
+    box-sizing: border-box;
+
+    &::after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+
+    & * {
+      box-sizing: border-box;
+    }
+
+    &__list {
+      float: left;
+      width: 50%;
+      height: 305px;
+      overflow-y: scroll;
+      &::-webkit-scrollbar {
+        width: 3px;
+      }
+      &::-webkit-scrollbar-track {
+        background: #efefef;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: #ccc;
+      }
+    }
+    &__with-suffix &__list {
+      width: 33.3%;
+    }
+    &__item {
+      padding: 10px 0;
+      font-size: 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: font-size .3s;
+    }
+    &__item:hover {
+      font-size: 32px;
+    }
+    &__item--selected {
+      color: #3f51b5;
+      font-size: 32px;
+    }
+    &__item--disabled {
+      opacity: 0.4;
+      cursor: default;
+      font-size: 20px !important;
+    }
+  }
+
+  // Year picker
+  &-year-picker {
+    box-sizing: border-box;
+
+    &::after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+
+    & * {
+      box-sizing: border-box;
+    }
+
+    &__list {
+      float: left;
+      width: 100%;
+      height: 305px;
+      overflow-y: scroll;
+      &::-webkit-scrollbar {
+        width: 3px;
+      }
+      &::-webkit-scrollbar-track {
+        background: #efefef;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: #ccc;
+      }
+    }
+    &__item {
+      padding: 10px 0;
+      font-size: 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: font-size .3s;
+    }
+    &__item:hover {
+      font-size: 32px;
+    }
+    &__item--selected {
+      color: #3f51b5;
+      font-size: 32px;
+    }
+  }
+}

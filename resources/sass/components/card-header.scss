@@ -1,0 +1,14 @@
+.card-header {
+  [class*="col"] {
+    display: flex;
+    align-items: center;
+
+    // &:not(:first-child) {
+    //   justify-content: flex-end;
+    // }
+
+    .btn {
+      margin-top: 0;
+    }
+  }
+}

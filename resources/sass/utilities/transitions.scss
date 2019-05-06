@@ -1,0 +1,26 @@
+//== Transisi untuk Vue
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .3s;
+}
+
+.slide-enter-active, .slide-leave-active {
+  transition: transform .3s;
+}
+
+.reveal-enter-active, .reveal-leave-active {
+  transition: transform .3s, opacity .5s;
+}
+
+.fade-enter, .fade-leave-to,
+.reveal-enter, .reveal-leave-to {
+  opacity: 0;
+}
+
+.slide-enter, .slide-leave-to {
+  transform: translateX(100%);
+}
+
+.reveal-enter, .reveal-leave-to {
+  transform: translateY(-100%);
+}

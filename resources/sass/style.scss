@@ -1,0 +1,49 @@
+//== Variable dan function
+// Bootstrap: Override lokal
+@import 'bootstrap/variables';
+// CoreUI: Override lokal
+@import 'coreui/variables';
+// CoreUI: Override dari NPM
+//@import '~core-ui-scss/bootstrap-variables';
+// Variable lokal
+@import 'variables';
+// Function lokal
+@import 'functions';
+
+
+//== Vendor NPM
+// Bootstrap
+@import 'bootstrap/bootstrap';
+// CoreUI
+@import 'coreui/core';
+// // BootstrapVue. Kenapa harus CSS? 😥
+// @import '~bootstrap-vue/dist/bootstrap-vue.min.css';
+// FontAwesome
+@import '~font-awesome/scss/font-awesome';
+
+//== Vendor lokal
+// Multiselect
+@import 'vendor/multiselect';
+@import 'vendor/multiselect-scheme';
+@import 'vendor/multiselect-scheme-fkn-disposisi';
+// Flatpickr
+@import 'vendor/flatpickr';
+@import 'vendor/flatpickr-custom';
+// Vue Datetime
+@import 'vendor/vue-datepicker';
+// Noty
+@import 'vendor/noty';
+
+
+//== Kustomisasi tambahan ada disini
+// CoreUI: Custom
+@import 'coreui/custom';
+
+// Komponen
+@import 'components/login';
+@import 'components/card-header';
+@import 'components/card-table';
+@import 'components/list-choice';
+
+//== Utility
+@import 'utilities/transitions';

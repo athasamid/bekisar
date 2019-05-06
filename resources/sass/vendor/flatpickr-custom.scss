@@ -1,0 +1,8 @@
+.flatpickr-input[readonly] {
+  background-color: $input-bg;
+}
+
+.input-group .form-control.flatpickr-input-first:not(:first-child):not(:last-child) {
+  border-top-left-radius: $input-border-radius;
+  border-bottom-left-radius: $input-border-radius;
+}

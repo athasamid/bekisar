@@ -1,0 +1,47 @@
+// Import core styles
+@import "~core-ui-scss/core/variables";
+@import "~core-ui-scss/core/mixins";
+
+// Additional typography
+@import "~core-ui-scss/core/typography";
+
+// Animations
+@import "~core-ui-scss/core/animate";
+
+// Components
+@import "~core-ui-scss/core/aside";
+@import "~core-ui-scss/core/avatars";
+@import "~core-ui-scss/core/badge";
+@import "~core-ui-scss/core/breadcrumb-menu";
+@import "~core-ui-scss/core/breadcrumb";
+@import "~core-ui-scss/core/buttons";
+@import "~core-ui-scss/core/callout";
+@import "~core-ui-scss/core/card";
+@import "~core-ui-scss/core/charts";
+@import "~core-ui-scss/core/dropdown";
+@import "~core-ui-scss/core/footer";
+@import "~core-ui-scss/core/grid";
+@import "~core-ui-scss/core/input-group";
+@import "~core-ui-scss/core/loading";
+@import "~core-ui-scss/core/modal";
+@import "~core-ui-scss/core/nav";
+@import "~core-ui-scss/core/navbar";
+@import "~core-ui-scss/core/progress";
+@import "~core-ui-scss/core/sidebar";
+@import "~core-ui-scss/core/switches";
+@import "~core-ui-scss/core/tables";
+@import "~core-ui-scss/core/widgets";
+
+// Layout Options
+@import "~core-ui-scss/core/layout";
+
+@import "~core-ui-scss/core/others";
+
+// Utility classes
+@import "~core-ui-scss/core/utilities";
+
+// Temporary fixes
+@import "~core-ui-scss/core/temp";
+
+// Right-to-left
+@import "~core-ui-scss/core/rtl";
